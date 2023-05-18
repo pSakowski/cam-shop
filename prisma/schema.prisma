@@ -27,18 +27,21 @@ model Password {
 }
 
 model Product {
-  id          String   @id @default(uuid())
+  id          String @id @default(uuid())
   name        String
   price       Int
   oldPrice    Int?
   description String
   image       String
-  gallery     Imgs[]
+
+  orders Order[]
 }
 
-model Imgs {
-  id        String  @id @default(uuid())
-  image     String
-  product   Product @relation(fields: [productId], references: [id])
-  productId String
+model Order {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  productId String?
 }
