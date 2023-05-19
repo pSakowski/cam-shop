@@ -8,10 +8,12 @@ import {
   ParseUUIDPipe,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDTO } from './dtos/create-product.dto';
 import { UpdateProductDTO } from './dtos/update-product.dto';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @Controller('products')
 export class ProductsController {
@@ -30,6 +32,7 @@ export class ProductsController {
   }
 
   @Delete('/:id')
+  @UseGuards(JwtAuthGuard)
   async deleteById(@Param('id', new ParseUUIDPipe()) id: string) {
     const product = await this.productsService.getById(id);
     if (!product) {
@@ -40,6 +43,7 @@ export class ProductsController {
   }
 
   @Post('/')
+  @UseGuards(JwtAuthGuard)
   async create(@Body() productData: CreateProductDTO) {
     const newProduct = await this.productsService.create(productData);
     return {
@@ -49,6 +53,7 @@ export class ProductsController {
   }
 
   @Put('/:id')
+  @UseGuards(JwtAuthGuard)
   async update(
     @Param('id', new ParseUUIDPipe()) id: string,
     @Body() productData: UpdateProductDTO,
