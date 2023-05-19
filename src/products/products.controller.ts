@@ -14,6 +14,7 @@ import { ProductsService } from './products.service';
 import { CreateProductDTO } from './dtos/create-product.dto';
 import { UpdateProductDTO } from './dtos/update-product.dto';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { AdminAuthGuard } from 'src/auth/admin-auth.guard';
 
 @Controller('products')
 export class ProductsController {
@@ -32,6 +33,7 @@ export class ProductsController {
   }
 
   @Delete('/:id')
+  @UseGuards(AdminAuthGuard)
   @UseGuards(JwtAuthGuard)
   async deleteById(@Param('id', new ParseUUIDPipe()) id: string) {
     const product = await this.productsService.getById(id);
