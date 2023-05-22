@@ -1,13 +1,37 @@
-//selectors
+/* SELECTORS */
+export const getUser = (state) => state.user;
 
-// actions
-const createActionName = actionName => `app/users/${actionName}`;
+/* ACTIONS */
+const createActionName = (actionName) => `app/users/${actionName}`;
+const LOG_IN = createActionName('LOG_IN');
+const LOG_OUT = createActionName('LOG_OUT');
 
-// action creators
-const usersReducer = (statePart = [], action) => {
+/* ACTION CREATORS */
+export const logIn = (payload) => ({
+  type: LOG_IN,
+  payload,
+});
+
+export const logOut = () => ({
+  type: LOG_OUT,
+});
+
+const usersReducer = (statePart = null, action) => {
   switch (action.type) {
+    case LOG_IN:
+      // Store user in localStorage
+      localStorage.setItem('user', JSON.stringify(action.payload));
+      return action.payload;
+    case LOG_OUT:
+      localStorage.removeItem('user');
+      return null;
     default:
-      return statePart;
-  };
+      // Retrieve user from localStorage
+      const savedState = localStorage.getItem('user');
+      return savedState && savedState !== 'undefined'
+        ? JSON.parse(savedState)
+        : statePart;
+  }
 };
+
 export default usersReducer;
