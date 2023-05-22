@@ -1,0 +1,57 @@
+/* Footer.module.scss */
+
+.footer {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .footerSection {
+    margin-bottom: 20px;
+  }
+  
+  .footerSectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footerSectionText {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .footerButton {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .socialIcons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .socialIcon {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .socialIcon a {
+    color: #fff;
+  }
+  
+  .footerText {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footerCopyright {
+    font-size: 12px;
+    color: #ccc;
+  }
+  
