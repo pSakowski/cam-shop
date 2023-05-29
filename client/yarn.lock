@@ -8210,7 +8210,7 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
-react-bootstrap@2.0.1:
+react-bootstrap@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-2.0.1.tgz"
   integrity sha512-vx4fi3mHWWIzaAOJEzFfmTn/GHtirpASRk0C1PDBW5OZAt/VxLgUt+bvrSSh83eRmInq3wy8mERJMwuyI61KPA==

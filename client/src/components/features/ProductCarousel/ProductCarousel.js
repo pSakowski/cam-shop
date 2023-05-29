@@ -5,28 +5,28 @@ import styles from './ProductCarousel.module.scss';
 const items = [
   {
     src: '/img/promo/cameras.jpg',
-    header: 'Cameras',
-    caption: 'Explore our wide range of high-quality cameras.',
-    buttonLabel: 'Shop Now',
+    header: 'Aparaty',
+    caption: 'Zapoznaj się z naszą szeroką gamą wysokiej jakości aparatów.',
+    buttonLabel: 'Kup teraz',
     buttonUrl: '/cameras',
   },
   {
     src: '/img/promo/lenses.jpg',
-    header: 'Lenses',
-    caption: 'Enhance your photography with our exceptional lenses.',
-    buttonLabel: 'Shop Now',
+    header: 'Obiektywy',
+    caption: 'Ulepsz swoje zdjęcia dzięki naszym wyjątkowym obiektywom.',
+    buttonLabel: 'Kup teraz',
     buttonUrl: '/lenses',
   },
   {
     src: '/img/promo/accessories.jpg',
-    header: 'Accessories',
-    caption: 'Discover the perfect accessories for your photography needs.',
-    buttonLabel: 'Shop Now',
+    header: 'Akcesoria',
+    caption: 'Odkryj idealne akcesoria do swoich potrzeb fotograficznych.',
+    buttonLabel: 'Kup teraz',
     buttonUrl: '/accessories',
   },
   {
     src: '/img/promo/sale.jpg',
-    buttonLabel: 'View Sale',
+    buttonLabel: 'Zobacz',
     buttonUrl: '/sale',
   },
 ];

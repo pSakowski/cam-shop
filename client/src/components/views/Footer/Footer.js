@@ -14,7 +14,7 @@ const Footer = () => (
               Bądź częścią naszej społeczności i otrzymuj najnowsze
               aktualizacje, oferty i wiadomości.
             </p>
-            <Link to="/join" className={styles.footerButton}>
+            <Link to="/register" className={styles.footerButton}>
               Dołącz teraz!
             </Link>
           </div>
@@ -47,7 +47,7 @@ const Footer = () => (
         <Col md="12" className={styles.footerText}>
           <small className={styles.footerCopyright}>
             &copy; 2023 LOGO Sklep. Wszelkie prawa zastrzeżone. |{' '}
-            <Link to="/rules">Reguulamin</Link> |{' '}
+            <Link to="/rules">Regulamin</Link> |{' '}
             <Link to="/privacy-policy">Polityka prywatności</Link> |{' '}
             <Link to="/returns">Zwroty</Link> |{' '}
             <Link to="/contact">Kontakt</Link>

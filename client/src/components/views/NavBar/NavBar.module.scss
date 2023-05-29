@@ -1,16 +1,20 @@
 .navbar {
   border-bottom: 2px solid black;
-  background-color: black;
-
-  &-toggler {
-    color: white;
-  }
+  padding: 1rem 0;
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 .logo {
@@ -18,55 +22,52 @@
   border: 2px solid black;
   background-color: black;
   padding: 5px 10px;
-  font-weight: bold;
+  font-weight: bolder;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .menuToggler {
-  margin-bottom: 0;
+  color: white;
+  border: none;
+  background-color: transparent;
+  font-size: 1.25rem;
 }
 
 .menu {
   display: flex;
-  justify-content: center;
-  align-items: end;
-  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navMenu {
+  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
 
-  li {
+  .navItem {
     margin: 0 10px;
 
-    &:last-child a {
+    &:last-child .navLink {
       color: red;
-      font-weight: bold;
+      font-weight: bolder;
+      text-transform: uppercase;
+      font-size: 17px;
+
+      &:hover {
+        color: rgb(221, 0, 0);
+      }
     }
-  }
-
-  a {
-    font-weight: bold;
-  }
-
-  &:hover {
-    color: #ccc;
   }
 }
 
-.iconContainer {
-  display: flex;
-  align-items: center;
+.navLink {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-  a {
-    margin-right: 10px;
-    color: black;
-
-    &:hover {
-      color: #ccc;
-    }
-  }
-  .icon {
-    font-size: 30px;
+  &:hover {
+    color: #ccc;
   }
 }
 
@@ -74,6 +75,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 10px;
 
   input {
     border-top-right-radius: 0;
@@ -81,15 +83,58 @@
   }
 }
 
-@media (max-width: 768px) {
+.iconContainer {
+  display: flex;
+  align-items: center;
+
+  .iconLink {
+    margin-right: 10px;
+    color: black;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+
+  .icon {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
   .logo {
     font-size: 1.5rem;
   }
 
   .menu {
-    display: flex;
-    flex-wrap: inherit;
-    align-items: inherit;
+    width: 100%;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .navMenu {
+    flex-wrap: wrap;
     justify-content: center;
+
+    .navItem {
+      margin: 0.5rem;
+    }
+  }
+
+  .searchBox {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .iconContainer {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
   }
 }
