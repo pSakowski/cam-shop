@@ -1,10 +1,10 @@
 import { Container } from 'react-bootstrap';
-import PromoCarousel from '../../features/PromoCarousel/PromoCarousel';
 import Products from '../Products/Products';
+import ProductCarousel from '../../features/ProductCarousel/ProductCarousel';
 
 const Home = () => (
   <div>
-    <PromoCarousel />
+    <ProductCarousel />
     <Container>
       <Products />
     </Container>

@@ -1,0 +1,44 @@
+.carouselImage {
+  width: auto;
+  height: 450px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 2px solid black;
+  margin-bottom: 15px;
+}
+
+.carouselOverlay {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+.carouselContent {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.carouselButton {
+  background-color: transparent;
+  border: 2px solid yellow;
+  color: yellow;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 5%;
+}
+
+.carouselButton:hover {
+  background-color: yellow;
+  color: black;
+  border-radius: 5%;
+  border: 2px solid yellow;
+}
