@@ -1,4 +1,3 @@
-import { Button } from 'reactstrap';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import Spinner from 'react-bootstrap/Spinner';
@@ -49,29 +48,29 @@ const Login = () => {
   };
 
   return (
-    <Form className="col-12 col-sm-3 mx-auto" onSubmit={handleSubmit}>
-      <h2 className="my-4">Zaloguj się</h2>
+    <Form className="col-11 col-sm-3 mx-auto" onSubmit={handleSubmit}>
+      <h2 className="my-4">Sign in</h2>
       {status === 'success' && (
         <Alert variant="success">
-          <Alert.Heading>Sukces!</Alert.Heading>
-          <p>Udało Ci się zalogować!</p>
+          <Alert.Heading>Success!</Alert.Heading>
+          <p>You have successfully logged in!</p>
         </Alert>
       )}
       {status === 'serverError' && (
         <Alert variant="danger">
-          <Alert.Heading>Coś poszło nie tak...</Alert.Heading>
-          <p>Spróbuj ponownie!</p>
+          <Alert.Heading>Something went wrong...</Alert.Heading>
+          <p>Please try again!</p>
         </Alert>
       )}
       {status === 'clientError' && (
         <Alert variant="danger">
-          <Alert.Heading>Nieprawidłowe dane</Alert.Heading>
-          <p>Email lub hasło są nieprawidłowe...</p>
+          <Alert.Heading>Invalid credentials</Alert.Heading>
+          <p>Email or password is incorrect...</p>
         </Alert>
       )}
       {status === 'loading' && (
         <Spinner animation="border" role="status" className="block mx-auto">
-          <span className="visually-hidden">Oczekiwanie...</span>
+          <span className="visually-hidden">Loading...</span>
         </Spinner>
       )}
       <Form.Group className="my-3" controlId="formEmail">
@@ -87,17 +86,17 @@ const Login = () => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Hasło"
+          placeholder="Password"
         />
       </Form.Group>
-      <Button color="success" className={styles.btnLogin}>
-        <b>Zaloguj</b>
-      </Button>
+      <button className={styles.btnLogin}>
+        <b>Log in</b>
+      </button>
       <p>
-        Nie pamiętasz hasła? <a href="/lost-account"><b>Kliknij tutaj!</b></a>
+        Forgot your password? <a href="/lost-account"><b>Click here!</b></a>
       </p>
       <p>
-        Nie masz konta? <a href="/register"><b>Zarejestruj się!</b></a>
+        Don't have an account? <a href="/register"><b>Register now!</b></a>
       </p>
     </Form>
   );

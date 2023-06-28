@@ -2,31 +2,32 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import styles from './ProductCarousel.module.scss';
 
+
 const items = [
   {
     src: '/img/promo/cameras.jpg',
-    header: 'Aparaty',
-    caption: 'Zapoznaj się z naszą szeroką gamą wysokiej jakości aparatów.',
-    buttonLabel: 'Kup teraz',
+    header: 'Cameras',
+    caption: 'Explore our wide range of high-quality cameras.',
+    buttonLabel: 'Buy now',
     buttonUrl: '/cameras',
   },
   {
     src: '/img/promo/lenses.jpg',
-    header: 'Obiektywy',
-    caption: 'Ulepsz swoje zdjęcia dzięki naszym wyjątkowym obiektywom.',
-    buttonLabel: 'Kup teraz',
+    header: 'Lenses',
+    caption: 'Enhance your photos with our exceptional lenses.',
+    buttonLabel: 'Buy now',
     buttonUrl: '/lenses',
   },
   {
     src: '/img/promo/accessories.jpg',
-    header: 'Akcesoria',
-    caption: 'Odkryj idealne akcesoria do swoich potrzeb fotograficznych.',
-    buttonLabel: 'Kup teraz',
+    header: 'Accessories',
+    caption: 'Discover the perfect accessories for your photography needs.',
+    buttonLabel: 'Buy now',
     buttonUrl: '/accessories',
   },
   {
     src: '/img/promo/sale.jpg',
-    buttonLabel: 'Zobacz',
+    buttonLabel: 'View',
     buttonUrl: '/sale',
   },
 ];

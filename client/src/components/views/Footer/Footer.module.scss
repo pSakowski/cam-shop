@@ -28,7 +28,7 @@
     font-size: 14px;
 
     &:hover{
-      color: yellow;
+      color: orange;
     }
   }
   
@@ -45,6 +45,10 @@
   
   .socialIcon a {
     color: #fff;
+
+    &:hover{
+      color: orange;
+    }
   }
   
   .footerText {

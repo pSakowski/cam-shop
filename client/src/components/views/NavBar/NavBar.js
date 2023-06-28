@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styles from './NavBar.module.scss';
 import { getUser } from '../../../redux/usersRedux';
 
@@ -14,71 +15,82 @@ const NavBar = () => {
   };
 
   return (
-    <nav className={`${styles.navbar} navbar navbar-expand-lg navbar-light bg-light`}>
-      <div className="container">
-        <button
-          className={`${styles.menuToggler} navbar-toggler`}
-          type="button"
-          onClick={toggle}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className={`${styles.logoContainer} navbar-brand`}>
-          <h1 className={styles.logo}><a href="/">camON</a></h1>
-        </div>
-        <div className={`${styles.menu} ${isOpen ? 'show' : ''} collapse navbar-collapse`}>
-          <ul className={`${styles.navMenu} navbar-nav mr-auto`}>
-            <li className={`${styles.navItem} nav-item`}>
-              <a href="/cameras" className={`${styles.navLink} nav-link`}>
-                Aparaty
+    <>
+      <div className='container'>
+        <nav className={styles.navbar}>
+          <div className={styles.logoContainer}>
+            <Link to="/">
+              <h1 className={styles.logo}>cam<span className={styles.logoEnding}>ON</span></h1>
+            </Link>
+          </div>
+          <div className={styles.contactInfo}>
+            <p className={styles.phoneNumber}>
+              <i className="fa fa-phone"></i> +1 123-456-7890
+            </p>
+            <p className={styles.liveChat}>
+              <i className="fa fa-comment"></i> Live Chat Now
+            </p>
+          </div>
+
+          <div className={styles.iconContainer}>
+            <Link to="/favorite" className={styles.iconLink}>
+              <i className='fa fa-heart'></i>
+            </Link>
+            <Link to="/cart" className={styles.iconLink}>
+              <i className='fa fa-shopping-cart'></i>
+            </Link>
+            {!isLoggedIn && (
+              <Link to="/login" className={styles.iconLink}>
+                <i className='fa fa-user'></i>
+              </Link>
+            )}
+            {isLoggedIn && (
+              <a href="/logout" className={styles.iconLink}>
+                <i className='fa fa-sign-out'></i>
               </a>
+            )}
+          </div>
+          <div className={`${styles.searchBox} ${styles.navItem}`}>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search..."
+              value={searchPhrase}
+              onChange={(e) => setSearchPhrase(e.target.value)}
+            />
+          </div>
+        </nav>
+      </div>
+      <div className={styles.mobileMenu} onClick={toggle}>
+        <i className={isOpen ? 'fa fa-times' : 'fa fa-bars'}></i>
+      </div>
+      {isOpen && (
+        <div className={styles.menu}>
+          <ul className={styles.navMenu}>
+            <li className={styles.navItem}>
+              <Link to="/cameras" className={styles.navLink}>
+                CAMERAS
+              </Link>
             </li>
-            <li className={`${styles.navItem} nav-item`}>
-              <a href="/lenses" className={`${styles.navLink} nav-link`}>
-                Obiektywy
-              </a>
+            <li className={styles.navItem}>
+              <Link to="/lenses" className={styles.navLink}>
+                LENSES
+              </Link>
             </li>
-            <li className={`${styles.navItem} nav-item`}>
-              <a href="/accessories" className={`${styles.navLink} nav-link`}>
-                Akcesoria
-              </a>
+            <li className={styles.navItem}>
+              <Link to="/accessories" className={styles.navLink}>
+                ACCESSORIES
+              </Link>
             </li>
-            <li className={`${styles.navItem} nav-item`}>
-              <a href="/sale" className={`${styles.navLink} nav-link ${styles.saleLink}`}>
-                <b>WYPRZEDAŻ</b>
-              </a>
+            <li className={styles.navItem}>
+              <Link to="/sale" className={styles.saleLink}>
+                SALE
+              </Link>
             </li>
           </ul>
         </div>
-        <div className={styles.searchBox}>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Szukaj..."
-            value={searchPhrase}
-            onChange={(e) => setSearchPhrase(e.target.value)}
-          />
-        </div>
-        <div className={styles.iconContainer}>
-          <a href="/favorite" className={styles.iconLink}>
-            <i className={`fa fa-heart ${styles.icon}`}></i>
-          </a>
-          <a href="/cart" className={styles.iconLink}>
-            <i className={`fa fa-shopping-cart ${styles.icon}`}></i>
-          </a>
-          {!isLoggedIn && (
-            <a href="/login" className={styles.iconLink}>
-              <i className={`fa fa-user ${styles.icon}`}></i>
-            </a>
-          )}
-          {isLoggedIn && (
-            <a href="/logout" className={styles.iconLink}>
-              <i className={`fa fa-sign-out ${styles.icon}`}></i>
-            </a>
-          )}
-        </div>
-      </div>
-    </nav>
+      )}
+    </>
   );
 };
 

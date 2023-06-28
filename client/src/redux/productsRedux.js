@@ -1,10 +1,11 @@
 import axios from 'axios';
-import { API_URL } from "../config";
+import { API_URL } from '../config';
+import initialState from './initialState';
 
 /* SELECTORS */
 export const getProducts = (state) => state.products;
-export const getProductsById = (state, id) =>
-  state.products.find((product) => product.id === id);
+export const getProductById = (state, id) =>
+  state.find((product) => product.id === id);
 
 /* ACTIONS */
 const createActionName = (actionName) => `app/products/${actionName}`;
@@ -35,7 +36,7 @@ export const loadProductsRequest = () => {
 };
 
 /* REDUCER */
-const productsReducer = (statePart = [], action) => {
+const productsReducer = (statePart = initialState.products, action) => {
   switch (action.type) {
     case LOAD_PRODUCTS:
       return [...action.payload];
@@ -43,4 +44,5 @@ const productsReducer = (statePart = [], action) => {
       return statePart;
   }
 };
+
 export default productsReducer;

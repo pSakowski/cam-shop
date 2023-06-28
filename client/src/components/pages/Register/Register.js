@@ -51,40 +51,40 @@ const Register = () => {
   };
 
   return (
-    <Form className="col-12 col-sm-3 mx-auto" onSubmit={handleSubmit}>
-      <h2 className="my-4">Zarejestruj się</h2>
+    <Form className="col-11 col-sm-3 mx-auto" onSubmit={handleSubmit}>
+      <h2 className="my-4">Sign up</h2>
 
       {status === 'success' && (
         <Alert variant="success">
-          <Alert.Heading>Sukces!</Alert.Heading>
-          <p>Zostałeś pomyślnie zarejestrowany! Teraz możesz się zalogować...</p>
+          <Alert.Heading>Success!</Alert.Heading>
+          <p>You have been successfully registered! Now you can log in...</p>
         </Alert>
       )}
 
       {status === 'serverError' && (
         <Alert variant="danger">
-          <Alert.Heading>Coś poszło nie tak...</Alert.Heading>
-          <p>Spróbuj ponownie!</p>
+          <Alert.Heading>Something went wrong...</Alert.Heading>
+          <p>Please try again!</p>
         </Alert>
       )}
 
       {status === 'clientError' && (
         <Alert variant="danger">
-          <Alert.Heading>Nieprawidłowe dane</Alert.Heading>
-          <p>Email lub hasło są nieprawidłowe...</p>
+          <Alert.Heading>Invalid data</Alert.Heading>
+          <p>Email or password is incorrect...</p>
         </Alert>
       )}
 
       {status === 'loginError' && (
         <Alert variant="warning">
-          <Alert.Heading>Email jest już zajęty</Alert.Heading>
-          <p>Musisz użyć innego adresu e-mail.</p>
+          <Alert.Heading>Email is already taken</Alert.Heading>
+          <p>You must use a different email address.</p>
         </Alert>
       )}
 
       {status === 'loading' && (
         <Spinner animation="border" role="status" className="block mx-auto">
-          <span className="visually-hidden">Oczekiwanie...</span>
+          <span className="visually-hidden">Loading...</span>
         </Spinner>
       )}
 
@@ -102,7 +102,7 @@ const Register = () => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Hasło"
+          placeholder="Password"
         />
       </Form.Group>
 
@@ -111,13 +111,13 @@ const Register = () => {
           type="password"
           value={passwordRepeat}
           onChange={(e) => setPasswordRepeat(e.target.value)}
-          placeholder="Powtórz hasło"
+          placeholder="Repeat Password"
         />
       </Form.Group>
 
-      <Button color="success" className={styles.btnRegister}>
-        <b>Zarejestruj</b>
-      </Button>
+      <button className={styles.btnRegister}>
+        <b>Register</b>
+      </button>
     </Form>
   );
 };
