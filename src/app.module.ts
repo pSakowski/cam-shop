@@ -1,5 +1,5 @@
-import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import * as cors from 'cors';
+import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductsModule } from './products/products.module';
@@ -9,9 +9,9 @@ import { AuthModule } from './auth/auth.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
-
-import { join } from 'path';
+import { MongooseModule } from '@nestjs/mongoose';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -27,6 +27,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
       load: [configuration],
       isGlobal: true,
     }),
+    MongooseModule.forRoot('DATABASE_URL'),
   ],
   controllers: [AppController],
   providers: [AppService],
@@ -36,7 +37,7 @@ export class AppModule implements NestModule {
     consumer
       .apply(cors({ credentials: true, origin: 'http://localhost:3000' }))
       .exclude(
-        { path: '/api/auth/logout', method: RequestMethod.ALL }, // Exclude the logout route from CORS middleware
+        { path: '/api/', method: RequestMethod.ALL },
       )
       .forRoutes({ path: '*', method: RequestMethod.ALL });
   }

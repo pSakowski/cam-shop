@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider = "mongodb"
+  url      = env("DATABASE_URL") 
 }
 
 enum Role {
@@ -13,21 +13,21 @@ enum Role {
 }
 
 model User {
-  id       String    @id @default(uuid())
+  id       String    @id @default(uuid()) @map("_id")
   email    String    @unique
   role     Role      @default(USER)
   password Password?
 }
 
 model Password {
-  id             String @id @default(uuid())
+  id             String @id @default(uuid()) @map("_id")
   hashedPassword String
   user           User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId         String @unique
 }
 
 model Product {
-  id          String @id @default(uuid())
+  id          String @id @default(uuid()) @map("_id")
   name        String
   price       Int
   oldPrice    Int?
@@ -38,7 +38,7 @@ model Product {
 }
 
 model Order {
-  id        String   @id @default(uuid())
+  id        String   @id @default(uuid()) @map("_id")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
