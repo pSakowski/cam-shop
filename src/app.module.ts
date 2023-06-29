@@ -35,7 +35,7 @@ import { join } from 'path';
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
     consumer
-      .apply(cors({ credentials: true, origin: 'http://localhost:3000' }))
+      .apply(cors({ credentials: true, origin: 'https://camon-shop.onrender.com' }))
       .exclude(
         { path: '/api/', method: RequestMethod.ALL },
       )
