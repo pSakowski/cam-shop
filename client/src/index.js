@@ -12,7 +12,7 @@ import 'font-awesome/css/font-awesome.min.css';
 const Root = () => (
   <Provider store={store}>
     <Router>
-      <App />
+<h1>esa</h1>
     </Router>
   </Provider>
 );
