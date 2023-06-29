@@ -1,4 +1,3 @@
-import * as cors from 'cors';
 import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -12,6 +11,7 @@ import configuration from './config/configuration';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import * as cors from 'cors';
 
 @Module({
   imports: [
@@ -34,11 +34,6 @@ import { join } from 'path';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
-    consumer
-      .apply(cors({ credentials: true, origin: '*' }))
-      .exclude(
-        { path: '/api/', method: RequestMethod.ALL },
-      )
-      .forRoutes({ path: '*', method: RequestMethod.ALL });
+    consumer.apply(cors({ credentials: true, origin: 'http://localhost:3000' })).forRoutes('*');
   }
 }
