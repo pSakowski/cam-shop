@@ -27,7 +27,7 @@ import { join } from 'path';
       load: [configuration],
       isGlobal: true,
     }),
-    MongooseModule.forRoot('DATABASE_URL'),
+    MongooseModule.forRoot(process.env.MONGODB_URI),
   ],
   controllers: [AppController],
   providers: [AppService],
