@@ -16,7 +16,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className='container'>
+
         <nav className={styles.navbar}>
           <div className={styles.logoContainer}>
             <Link to="/">
@@ -60,7 +60,7 @@ const NavBar = () => {
             />
           </div>
         </nav>
-      </div>
+
       <div className={styles.mobileMenu} onClick={toggle}>
         <i className={isOpen ? 'fa fa-times' : 'fa fa-bars'}></i>
       </div>

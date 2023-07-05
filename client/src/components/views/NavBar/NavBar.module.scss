@@ -1,9 +1,13 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: white;
   padding: 0.5rem;
+  border-bottom: 3px solid black;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 }
 
 .logoContainer {
@@ -76,6 +80,7 @@
   color: white;
   background-color: orange;
   padding: 5px;
+  border-bottom: 3px solid black;
   cursor: pointer;
 
   @media (max-width: 767px) {
@@ -89,6 +94,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
+  border-bottom: 3px solid black;
 
   @media (max-width: 767px) {
     max-height: 200px;
@@ -96,7 +102,6 @@
 }
 
 .navMenu {
-  display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;

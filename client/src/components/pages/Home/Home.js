@@ -4,7 +4,6 @@ import ProductCarousel from '../../features/ProductCarousel/ProductCarousel';
 
 const Home = () => (
   <div>
-    <h1>elo</h1>
     <ProductCarousel />
     <Container>
       <Products />
