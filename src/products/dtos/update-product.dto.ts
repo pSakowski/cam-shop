@@ -20,4 +20,6 @@ export class UpdateProductDTO {
   description: string;
 
   image: string;
+
+  category: string;
 }

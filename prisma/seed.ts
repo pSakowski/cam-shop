@@ -11,6 +11,7 @@ function getProducts() {
       oldPrice: 3000,
       description: 'Cheap, ideal for beginners',
       image: '/img/products/1.jpg',
+      category: 'cameras',
     },
     {
       id: 'c920c7b9-a67d-4edb-8ce7-e3c9f3889e56',
@@ -19,6 +20,7 @@ function getProducts() {
       oldPrice: 6500,
       description: 'Professional camera, solid build',
       image: '/img/products/2.jpg',
+      category: 'cameras',
     },
     {
       id: 'fd105551-0f0d-4a9f-bc41-c559c8a17257',
@@ -27,6 +29,7 @@ function getProducts() {
       oldPrice: 3500,
       description: 'Professional camera, new technology',
       image: '/img/products/3.jpg',
+      category: 'cameras',
     },
     {
       id: 'fd105551-0f0d-4a9f-bc41-c559c8a17258',
@@ -35,6 +38,7 @@ function getProducts() {
       oldPrice: 4000,
       description: 'Cheap, ideal for beginners',
       image: '/img/products/4.jpg',
+      category: 'cameras',
     },
     {
       id: '01c7599d-318b-4b9f-baf7-51f3a936a2d4',

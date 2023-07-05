@@ -33,6 +33,7 @@ model Product {
   oldPrice    Int?
   description String
   image       String
+  category    String?
 
   orders Order[]
 }
