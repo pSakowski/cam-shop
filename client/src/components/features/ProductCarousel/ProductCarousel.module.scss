@@ -29,16 +29,16 @@
 
 .carouselButton {
   background-color: transparent;
-  border: 2px solid orange;
-  color: orange;
+  border: 2px solid #ef7f1a;
+  color: #ef7f1a;
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 5%;
 }
 
 .carouselButton:hover {
-  background-color: orange;
+  background-color: #ef7f1a;
   color: black;
   border-radius: 5%;
-  border: 2px solid orange;
+  border: 2px solid #ef7f1a;
 }

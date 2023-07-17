@@ -1,63 +1,77 @@
 .footer {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  .footerSection {
-    margin-bottom: 20px;
-  }
-  
-  .footerSectionTitle {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .footerSectionText {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .footerButton {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 14px;
+  background-color: #000;
+  color: #fff;
+}
 
-    &:hover{
-      color: orange;
-    }
-  }
-  
-  .socialIcons {
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
-  
-  .socialIcon {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .socialIcon a {
-    color: #fff;
+.newsletterRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-    &:hover{
-      color: orange;
-    }
-  }
-  
-  .footerText {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .footerCopyright {
-    font-size: 12px;
-    color: #ccc;
-  }
-  
+.newsletterContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.newsletterContent h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.newsletterInput {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.newsletterButton {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.newsletterButton:hover {
+  color: orange;
+}
+
+.socialIcons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  border-bottom: 1px solid #707170;
+  border-top: 1px solid #707170;
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.socialIcons a {
+  color: white;
+}
+
+.socialIcons a:hover {
+  color: orange;
+}
+
+.footerText {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footerCopyright {
+  font-size: 12px;
+  color: #ccc;
+}
